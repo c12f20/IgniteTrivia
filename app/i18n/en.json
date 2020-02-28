@@ -28,5 +28,11 @@
     "title": "Welcome!",
     "signin": "Sign In",
     "signup": "Sign Up",
+  },
+  "homeScreen": {
+    "title": "Home",
+  },
+  "productsScreen": {
+    "title": "Products",
   }
 }
