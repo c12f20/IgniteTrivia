@@ -1,11 +1,15 @@
 import * as React from "react"
 import { createDrawerNavigator } from "react-navigation-drawer"
+import { Icon } from "react-native-elements"
+
+import {
+  DrawerContainer
+} from "../components"
+
 import {
   HomeScreen,
   ProductsScreen,
 } from "../screens"
-
-import { Icon } from "react-native-elements"
 
 export const DrawerNavigator = createDrawerNavigator(
   {
@@ -23,9 +27,17 @@ export const DrawerNavigator = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Products List',
         drawerIcon: (
-          <Icon name='home' size={20} color='gray' type="material"/>
+          <Icon name='local-mall' size={20} color='gray' type="material"/>
         )
       }
+    }
+  },
+  {
+    contentComponent: DrawerContainer,
+    contentOptions: {
+      onAvatarPressed: () => {
+        console.log('Avatar Pressed');
+      },
     }
   }
 )

@@ -39,6 +39,7 @@ export const LoginScreen: React.FunctionComponent<LoginScreenProps> = observer((
 
   const onSignIn = React.useMemo(() => () => {
     console.tron.log("Sign In Pressed");
+    props.navigation.navigate("drawer");
   }, [props.navigation])
 
   const onSignUp = React.useMemo(() => () => {

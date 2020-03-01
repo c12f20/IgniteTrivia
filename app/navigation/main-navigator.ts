@@ -11,7 +11,7 @@ export const MainNavigator = createSwitchNavigator(
     drawer: {screen: DrawerNavigator }
   },
   {
-    initialRouteName: 'drawer',
+    initialRouteName: 'auth',
   }
 );
 
@@ -22,4 +22,4 @@ export const MainNavigator = createSwitchNavigator(
  * Anything not on this list will be a standard `back` action in
  * react-navigation.
  */
-export const exitRoutes: string[] = ["home", "login"]
+export const exitRoutes: string[] = ["home", "auth"]

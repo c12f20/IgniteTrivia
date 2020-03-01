@@ -1,3 +1,5 @@
+require("../app/components/horizontal-list-item/horizontal-list-item.story")
+require("../app/components/horizontal-list/horizontal-list.story")
 require("../app/components/drawer-container/drawer-container.story")
 require("../app/components/text/text.story")
 require("../app/components/button/button.story")
