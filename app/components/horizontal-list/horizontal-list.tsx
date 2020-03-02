@@ -1,6 +1,6 @@
 import * as React from "react"
 import { View, ViewStyle, FlatList } from "react-native"
-import { Text, Button, HorizonListItem } from "../"
+import { Text, Button, HorizontalListItem } from "../"
 import { horizontalListStyles as styles } from "./horizontal-list.styles"
 
 import { Product } from "../../models/product"
@@ -10,9 +10,9 @@ export interface HorizontalListProps {
 
   data?: Product[]
 
-  onItemPressed?: (item: Product):void
+  onItemPressed?: (item: Product) => void
 
-  onViewAllPressed?: ():void
+  onViewAllPressed?: () => void
   /**
    * An optional style override useful for padding & margin.
    */
@@ -28,40 +28,39 @@ export function HorizontalList(props: HorizontalListProps) {
   // grab the props
   const { style, title, data, ...rest } = props
 
-  _keyExtractor = (item, index) => index.toString();
+  const keyExtractor = (index: number) => index.toString();
 
-  _onPressItem = (item) => {
-    if (this.props.onItemPressed != undefined) {
-      this.props.onItemPressed(item);
+  const onPressItem = (item: Product) => {
+    if (props.onItemPressed != undefined) {
+      props.onItemPressed(item);
     }
   }
 
-  _onPressViewAll = () => {
-    if (this.props.onViewAllPressed != undefined) {
-      this.props.onViewAllPressed();
+  const onPressViewAll = () => {
+    if (props.onViewAllPressed != undefined) {
+      props.onViewAllPressed();
     }
   }
 
-  _renderItem = ({item, index}) => {
+  const renderItem = ({item}) => {
     return (
-      <HorizonListItem
-        index = {index}
+      <HorizontalListItem
         data = {item}
-        onPressItem = {this._onPressItem} />
+        onPressItem = {onPressItem} />
     )
   }
 
   return (
-    <View style={styles.WRAPPER}>
+    <View style={styles.WRAPPER} {...rest}>
       <View style={styles.TITLE_LINE}>
-        <Text style={styles.TITLE}>{this.props.title}</Text>
-        <Button preset='link' textStyle={styles.BTN_VIEW_ALL} onPress={this.onPressViewAll}>View all &gt;</Text>
+        <Text style={styles.TITLE}>{props.title}</Text>
+        <Button preset='link' textStyle={styles.BTN_VIEW_ALL} onPress={onPressViewAll} tx='View all &gt' />
       </View>
       <FlatList
-        data = {this.props.data}
+        data = {props.data}
         horizontal = {true}
-        keyExtractor = {this._keyExtractor}
-        renderItem = {this._renderItem} />
+        keyExtractor = {keyExtractor}
+        renderItem = {renderItem} />
     </View>
   )
 }

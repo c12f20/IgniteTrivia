@@ -6,28 +6,25 @@ import {
   DrawerContainer
 } from "../components"
 
-import {
-  HomeScreen,
-  ProductsScreen,
-} from "../screens"
+import { HomeStackNavigator, ProductStackNavigator } from "./stacks-navigator"
 
 export const DrawerNavigator = createDrawerNavigator(
   {
     home: {
-      screen: HomeScreen,
+      screen: HomeStackNavigator,
       navigationOptions: {
         drawerLabel: "Home",
         drawerIcon: (
-          <Icon name='home' size={20} color='gray' type="material"/>
+          <Icon name='home' size={20} color='gray'/>
         )
       }
     },
     products: {
-      screen: ProductsScreen,
+      screen: ProductStackNavigator,
       navigationOptions: {
         drawerLabel: 'Products List',
         drawerIcon: (
-          <Icon name='local-mall' size={20} color='gray' type="material"/>
+          <Icon name='local-mall' size={20} color='gray'/>
         )
       }
     }

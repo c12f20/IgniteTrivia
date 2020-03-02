@@ -10,14 +10,14 @@ export interface HomeScreenProps extends NavigationInjectedProps<{}> {
 }
 
 const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
+  backgroundColor: color.background,
 }
 
 export const HomeScreen: React.FunctionComponent<HomeScreenProps> = observer((props) => {
   // const { someStore } = useStores()
   return (
     <Screen style={ROOT} preset="scroll">
-      <Text preset="header" tx="homeScreen.title" />
+      
     </Screen>
   )
 })

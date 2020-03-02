@@ -6,7 +6,7 @@ import { Instance, SnapshotOut, types } from "mobx-state-tree"
 export const ProductModel = types
   .model("Product")
   .props({
-    image: types.maybe(types.string),
+    image: types.maybe(types.number),
     price: types.maybe(types.number)
   })
   .views(self => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars

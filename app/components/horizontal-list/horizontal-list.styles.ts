@@ -20,6 +20,5 @@ export const horizontalListStyles = {
 
   BTN_VIEW_ALL: {
     fontSize: 20,
-  }
-
+  } as TextStyle,
 }

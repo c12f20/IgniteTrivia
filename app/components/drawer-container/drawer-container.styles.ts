@@ -3,6 +3,8 @@ import {
   TextStyle,
 } from "react-native"
 
+import { color } from "../../theme"
+
 export const drawerContainerStyles = {
   CONTAINER: {
     flex: 1
@@ -17,7 +19,7 @@ export const drawerContainerStyles = {
 
   GREETING: {
     flex: 1,
-    color: 'gray',
+    color: color.dim,
     fontSize: 24,
     fontStyle: 'italic',
     textAlign: 'center'
@@ -25,7 +27,7 @@ export const drawerContainerStyles = {
 
   DIVIDE_LINE: {
     height: 2,
-    backgroundColor: 'lightgray'
+    backgroundColor: color.line,
   } as ViewStyle,
 
   AVATAR: {
